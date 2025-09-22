@@ -1,2 +1,8 @@
 jdk:
-  - openjdk17
+  - openjdk11
+before_install:
+  - sdk install java 11.0.12-open
+  - sdk use java 11.0.12-open
+  - yes | sdkmanager "platforms;android-33"
+install:
+  - ./gradlew clean build publishToMavenLocal -x test
