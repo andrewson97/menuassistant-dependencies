@@ -18,11 +18,12 @@ group = 'com.github.andrewson97'
 version = '1.0.9'
 
 android {
-    compileSdkVersion 31
+    namespace 'com.menuassistant.whisper'
+    compileSdk 33
     
     defaultConfig {
-        minSdkVersion 21
-        targetSdkVersion 31
+        minSdk 21
+        targetSdk 33
     }
 }
 
