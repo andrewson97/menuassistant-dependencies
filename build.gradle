@@ -1,3 +1,8 @@
+plugins {
+    id 'com.android.library' apply false
+    id 'maven-publish'
+}
+
 buildscript {
     repositories {
         google()
@@ -14,6 +19,10 @@ allprojects {
         mavenCentral()
     }
     
-    group = 'com.github.menuassistant'
+    group = 'com.github.andrewson97'
     version = '1.0.0'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '8.1.0'
 }
