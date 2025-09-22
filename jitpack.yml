@@ -1,11 +1,4 @@
 jdk:
-  - openjdk11
-env:
-  JAVA_OPTS: "-XX:+UseG1GC -XX:MaxGCPauseMillis=100 -XX:+UseStringDeduplication --add-modules java.xml.bind"
+  - openjdk8
 before_install:
-  - wget https://services.gradle.org/distributions/gradle-7.6.1-bin.zip
-  - unzip -qq gradle-7.6.1-bin.zip
-  - export GRADLE_HOME=$PWD/gradle-7.6.1
-  - export PATH=$GRADLE_HOME/bin:$PATH
-install:
-  - gradle clean build publishToMavenLocal -x test
+  - chmod +x gradlew
