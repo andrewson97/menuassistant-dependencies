@@ -2,9 +2,10 @@ buildscript {
     repositories {
         google()
         mavenCentral()
+        gradlePluginPortal()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.2.2'
+        classpath 'com.android.tools.build:gradle:7.0.4'
     }
 }
 
@@ -21,7 +22,7 @@ allprojects {
 }
 
 group = 'com.github.andrewson97'
-version = '1.0.3'
+version = '1.0.4'
 
 android {
     compileSdkVersion 31
