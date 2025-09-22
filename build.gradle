@@ -9,7 +9,7 @@ buildscript {
 }
 
 plugins {
-    id 'com.android.library' apply false
+    id 'com.android.library'
     id 'maven-publish'
 }
 
@@ -18,11 +18,34 @@ allprojects {
         google()
         mavenCentral()
     }
-    
-    group = 'com.github.andrewson97'
-    version = '1.0.0'
 }
 
-task wrapper(type: Wrapper) {
+group = 'com.github.andrewson97'
+version = '1.0.3'
+
+android {
+    compileSdkVersion 31
+    
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 31
+    }
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = project.group
+            artifactId = project.name
+            version = project.version
+            
+            afterEvaluate {
+                from components.release
+            }
+        }
+    }
+}
+
+wrapper {
     gradleVersion = '6.7.1'
 }
